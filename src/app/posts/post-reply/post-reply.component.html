@@ -1,0 +1,12 @@
+<div class="sticky">
+    <a href="javascript:void(0)" (click)="reply = true" *ngIf="!reply" appMargin="right, 20">Reply</a>
+    <a href="javascript:void(0)" *ngIf="!reply" (click)="delete()">Delete</a>
+
+    <div *ngIf="reply">
+        <textarea autofocus style="width: 100%" [formControl]="postText" (keydown.enter)="reply = false; post();"></textarea>
+        <div>
+            <a href="javascript:void(0)" (click)="reply = false; post()" appMargin="right, 20">Post</a>
+            <a href="javascript:void(0)" (click)="reply = false">Cancel</a>
+        </div>
+    </div>
+</div>

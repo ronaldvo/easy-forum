@@ -1,0 +1,10 @@
+<div *ngIf="thread$ | async as thread">
+    <div appMargin="bottom, 30">
+        <h4>{{thread.title}}</h4>
+    </div>
+    <div>{{thread.text}}</div>
+    <small appColor="gray">Anonymous ({{thread.date.seconds * 1000 | date: 'short'}})</small>
+    <app-post-reply class="sticky"></app-post-reply>
+    <app-post></app-post>
+
+</div>

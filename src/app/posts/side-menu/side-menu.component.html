@@ -1,0 +1,4 @@
+<div appColor="green" appBold appCursorPointer appTextAlign="right" class="side-menu">
+    <a *ngIf="OnHomePage" [routerLink]="[ '/new' ]" style="text-decoration: none;">Create New Thread</a>
+    <a *ngIf="!OnHomePage" [routerLink]="[ '' ]" style="text-decoration: none;">Back</a>
+</div>

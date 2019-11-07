@@ -1,0 +1,5 @@
+<div class="grid">
+    <div class="grid-row" *ngFor="let row of data | async" (click)="rowClick(row)" appCursorPointer>
+        <div appHover>{{row.title}}</div>
+    </div>
+</div>

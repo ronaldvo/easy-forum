@@ -1,0 +1,7 @@
+.grid {
+    width: 100%;
+}
+
+.grid-row > div {
+    padding-bottom: 25px !important;
+}

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; margin-left: 300px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.side-menu {
+  left: 0px;
+  top: 60px;
+  position: fixed;
+  width: 245px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: 0px;
+}

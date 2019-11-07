@@ -1,0 +1,10 @@
+<form [formGroup]="thread">
+    <div>
+        <input formControlName="title" type="text" placeholder="Enter a thread title">
+    </div>
+    <div>
+        <textarea formControlName="text" type="text" placeholder="Content here" (keydown.enter)="save()"></textarea>
+    </div>
+    
+    <button type="button" (click)="save()">Submit</button>
+</form>
