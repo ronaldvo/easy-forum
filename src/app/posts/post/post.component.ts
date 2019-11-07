@@ -19,6 +19,10 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.posts$ = this.postsService.getPosts(this.route.snapshot.paramMap.get('id'));
+
+    this.posts$.subscribe(data => {
+      console.log(data);
+    })
   }
 
   delete(id: string) {

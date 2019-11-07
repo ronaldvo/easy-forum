@@ -4,14 +4,15 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Post } from '../post.model';
 
-@Component({
-  selector: 'app-post-reply',
-  templateUrl: './post-reply.component.html',
-  styleUrls: ['./post-reply.component.css']
-})
-export class PostReplyComponent implements OnInit {
 
-  @Input() postId: string;
+@Component({
+  selector: 'app-thread-reply',
+  templateUrl: './thread-reply.component.html',
+  styleUrls: ['./thread-reply.component.css']
+})
+export class ThreadReplyComponent implements OnInit {
+
+  @Input() cssClass = 'default';
   reply = false;
   postText: FormControl = new FormControl('');
   newPost: Post;
@@ -28,11 +29,12 @@ export class PostReplyComponent implements OnInit {
       text: this.postText.value
     };
 
-    this.postsService.savePostReply(this.postId, this.newPost);
+    this.postsService.savePost(this.newPost);
     this.postText.reset();
   }
 
   delete() {
-    this.postsService.deletePost(this.postId);
+    this.postsService.deleteThread(this.route.snapshot.paramMap.get('id'));
+    this.router.navigate(['']);
   }
 }

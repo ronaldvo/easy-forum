@@ -1,4 +1,4 @@
-<div class="default">
+<div [class]="cssClass">
     <a href="javascript:void(0)" (click)="reply = true" *ngIf="!reply" appMargin="right, 20">Reply</a>
     <a href="javascript:void(0)" *ngIf="!reply" (click)="delete()">Delete</a>
 

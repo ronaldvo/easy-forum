@@ -58,6 +58,7 @@ getPosts(threadId: string) {
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Post;
         const id = a.payload.doc.id;
+        console.log(data);
         return { id, ...data };
       }))
     );
@@ -65,6 +66,10 @@ getPosts(threadId: string) {
 
 savePost(post: Post) {
   return this.fs.collection<Post>('posts').add(post);
+}
+
+savePostReply(postId: string, post: Post) {
+  return this.fs.doc<Post>('posts/' + postId).collection<Post>('posts').add(post);
 }
 
 deletePost(postId: string) {

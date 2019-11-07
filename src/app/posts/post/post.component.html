@@ -1,5 +1,6 @@
 <div *ngFor="let p of posts$ | async" style="margin: 40px 20px">
     <div [innerHTML]="p.text"></div>
     <small appColor="gray">Anonymous ({{(p.date['seconds'] * 1000) | date: 'short'}})</small>
-    <div><a href="javascript:void(0)" appMargin="top, 5" appFontSize="12" (click)="delete(p.id)">Delete</a></div>
+    <!-- <div><a href="javascript:void(0)" appMargin="top, 5" appFontSize="12" (click)="delete(p.id)">Delete</a></div> -->
+    <app-post-reply [postId]="p.id"></app-post-reply>
 </div>
